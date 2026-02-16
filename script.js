@@ -1,23 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const countDisplay = document.getElementById('count');
-    const increaseBtn = document.getElementById('increaseBtn');
-    const decreaseBtn = document.getElementById('decreaseBtn');
-    const resetBtn = document.getElementById('resetBtn');
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a');
 
-    let count = 0;
+    const onScroll = () => {
+        const scrollPosition = window.scrollY + 150; // Add offset for better accuracy
 
-    increaseBtn.addEventListener('click', () => {
-        count++;
-        countDisplay.textContent = count;
-    });
+        sections.forEach(section => {
+            if (section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (section.getAttribute('id') === link.getAttribute('href').substring(1)) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    };
 
-    decreaseBtn.addEventListener('click', () => {
-        count--;
-        countDisplay.textContent = count;
-    });
-
-    resetBtn.addEventListener('click', () => {
-        count = 0;
-        countDisplay.textContent = count;
-    });
+    window.addEventListener('scroll', onScroll);
 });

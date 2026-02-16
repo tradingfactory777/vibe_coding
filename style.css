@@ -1,52 +1,95 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
+html {
+    scroll-behavior: smooth;
 }
 
-.container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding-top: 50px; /* Add padding for the fixed nav */
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 2rem 0;
     text-align: center;
 }
 
-h1 {
-    color: #333;
-    margin-bottom: 20px;
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
 }
 
-p#count {
-    font-size: 3em;
-    color: #007bff;
-    margin-bottom: 30px;
+nav {
+    background: #34495e;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.2s;
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
-button:hover {
-    background-color: #0056b3;
+nav ul li {
+    margin: 0 1.5rem;
 }
 
-button#resetBtn {
-    background-color: #dc3545;
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
 }
 
-button#resetBtn:hover {
-    background-color: #c82333;
+nav a:hover,
+nav a.active {
+    color: #1abc9c;
+}
+
+main {
+    padding: 2rem 1rem;
+    width: 90%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+section {
+    background: #fff;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 3px solid #1abc9c;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: #2c3e50;
+    color: #ecf0f1;
+}
+
+footer a {
+    color: #1abc9c;
+    text-decoration: none;
 }
